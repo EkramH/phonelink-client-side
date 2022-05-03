@@ -7,7 +7,7 @@ import logo from "../../assets/img/logo.png";
 const Header = () => {
   return (
     <>
-      <Navbar className="shadow-sm" bg="light" sticky="top" expand="lg">
+      <Navbar className="shadow-sm navbar" sticky="top" expand="lg">
         <Container>
           <Navbar.Brand as={Link} to="/">
             <img height="55" src={logo} alt="" />
@@ -18,13 +18,13 @@ const Header = () => {
               <Nav.Link as={Link} to="/">
                 Home
               </Nav.Link>
-              <Nav.Link as={Link} to="/service">
+              <Nav.Link as={Link} to="/inventory">
                 Inventory
               </Nav.Link>
               <Nav.Link as={Link} to="/blog">
                 Blog
               </Nav.Link>
-              <Nav.Link as={Link} to="/blog">
+              <Nav.Link as={Link} to="/login">
                 Login
               </Nav.Link>
             </Nav>
