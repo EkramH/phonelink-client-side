@@ -24,6 +24,7 @@ const Home = () => {
       {/* Policy section */}
       <div className="policy-section">
         <div className="container">
+          <h1 className="text-center mb-3">Policy</h1>
           <div className="policy-container d-flex text-center">
             <div className="policy-wrapper px-3">
               <img className="img-fluid my-3 policy-icon" src={icon1} alt="" />
