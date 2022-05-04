@@ -22,6 +22,31 @@
    transform: rotateY(360deg);
 }
 
+.inventory-btn{
+    padding: 10px 28px;
+    border-radius: 16px;
+    border: 1px solid transparent;
+    color: #FFFFFF;
+    background-color: #1DC9A0;
+    font-size: 20px;
+    letter-spacing: 1px;
+    transition: all 0.15s linear;
+}
+
+.inventory-btn:hover{
+    background-color: rgba(29, 201, 160, 0.08);
+    border-color: #1DC9A0;
+    color: #1DC9A0;
+    transform: translateY(-5px) scale(1.05);
+}
+
+.inventory-btn:active{
+    background-color: transparent;
+    border-color: #1DC9A0;
+    color: #1DC9A0;
+    transform: translateY(5px) scale(0.95);
+}
+
 /* Mobile Responsive */
 @media (max-width: 576px) {
     .main-container, .policy-container{

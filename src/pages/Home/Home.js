@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import img from "../../assets/img/main-banner.png";
 import icon1 from "../../assets/icon/icon-1.png";
 import icon2 from "../../assets/icon/icon-2.png";
 import icon3 from "../../assets/icon/icon-3.png";
 import "./Home.css";
+import { InventoryContext } from "../../App";
+import InventoryDetails from "../Inventory/InventoryDetails";
+import { Link } from "react-router-dom";
 
 const Home = () => {
+  const inventories = useContext(InventoryContext);
   return (
     <>
       <div className="banner-section py-5">
@@ -59,6 +63,25 @@ const Home = () => {
           </div>
         </div>
         <hr></hr>
+      </div>
+      {/* Inventory section */}
+      <div className="container position-relative">
+        <h3 className="text-center my-5 display-5 main-color">Inventory</h3>
+        <div className="">
+          <div className="row row-cols-1 row-cols-md-3 g-4">
+            {inventories.slice(0, 6).map((inventory) => (
+              <InventoryDetails
+                key={inventory._id}
+                inventory={inventory}
+              ></InventoryDetails>
+            ))}
+          </div>
+        </div>
+        <div className="d-inline-flex w-100 justify-content-center">
+          <Link to="/inventory">
+            <button className="inventory-btn my-5">View All</button>
+          </Link>
+        </div>
       </div>
     </>
   );
