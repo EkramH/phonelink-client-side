@@ -7,6 +7,7 @@ import Home from "./pages/Home/Home";
 import useInventory from "./hooks/useInventory";
 import Inventory from "./pages/Inventory/Inventory";
 import Login from "./pages/Login/Login";
+import Register from "./pages/Register/Register";
 
 export const InventoryContext = React.createContext([]);
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/home" element={<Home></Home>}></Route>
           <Route path="/inventory" element={<Inventory></Inventory>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
+          <Route path="/register" element={<Register></Register>}></Route>
         </Routes>
       </InventoryContext.Provider>
       <Footer></Footer>

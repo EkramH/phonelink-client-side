@@ -19,22 +19,22 @@ const Footer = () => {
           </div>
 
           <div>
-            <a href="https://facebook.com/" class="me-4 text-reset">
+            <a href="https://facebook.com/" className="me-4 text-reset">
               <FaFacebookF></FaFacebookF>
             </a>
-            <a href="https://twitter.com/" class="me-4 text-reset">
+            <a href="https://twitter.com/" className="me-4 text-reset">
               <FaTwitter></FaTwitter>
             </a>
-            <a href="https://google.com/" class="me-4 text-reset">
+            <a href="https://google.com/" className="me-4 text-reset">
               <FaGoogle></FaGoogle>
             </a>
-            <a href="https://instagram.com/" class="me-4 text-reset">
+            <a href="https://instagram.com/" className="me-4 text-reset">
               <FaInstagram></FaInstagram>
             </a>
-            <a href="https://linkedin.com/" class="me-4 text-reset">
+            <a href="https://linkedin.com/" className="me-4 text-reset">
               <FaLinkedin></FaLinkedin>
             </a>
-            <a href="https://github.com/" class="me-4 text-reset">
+            <a href="https://github.com/" className="me-4 text-reset">
               <FaGithub></FaGithub>
             </a>
           </div>

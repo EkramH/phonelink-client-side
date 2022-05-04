@@ -1,8 +1,8 @@
 import React from "react";
-import "./Login.css";
+import "./Register.css";
 import img from "../../assets/img/login.png";
 
-const Login = () => {
+const Register = () => {
   return (
     <>
       <div className="container-fluid h-custom">
@@ -59,12 +59,9 @@ const Login = () => {
                 </button>
                 <p className="small fw-bold mt-2 pt-1 mb-0">
                   Don't have an account?{" "}
-                  <span
-                    className="text-danger mx-2 cursor-pointer"
-                    style={{ cursor: "pointer" }}
-                  >
-                    Register here.
-                  </span>
+                  <a href="#!" className="link-danger">
+                    Register
+                  </a>
                 </p>
               </div>
             </form>
@@ -75,4 +72,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
