@@ -4,7 +4,6 @@ import InventoryDetails from "./InventoryDetails";
 
 const Inventory = () => {
   const inventories = useContext(InventoryContext);
-  console.log(inventories);
   return (
     <>
       <div className="container">

@@ -1,9 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./inventory.css";
 
 const inventoryDetails = ({ inventory }) => {
-  const { name, img, price, details, quantity, supplier } = inventory;
+  const { _id, name, img, price, details, quantity, supplier } = inventory;
+  const navigate = useNavigate();
+
+  const navigateToInventoryPage = (id) => {
+    navigate(`/inventory/${id}`);
+  };
+
   return (
     <>
       <div className="col">
@@ -21,11 +27,13 @@ const inventoryDetails = ({ inventory }) => {
             <h6>Quantity: {quantity}</h6>
           </div>
           <div className="mx-auto mb-3">
-            <Link to="/checkout">
-              <button type="button" className="btn btn-appointment">
-                Manage Item
-              </button>
-            </Link>
+            <button
+              onClick={() => navigateToInventoryPage(_id)}
+              type="button"
+              className="btn btn-appointment"
+            >
+              Manage Item
+            </button>
           </div>
         </div>
       </div>
