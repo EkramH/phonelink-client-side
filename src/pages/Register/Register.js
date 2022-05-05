@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Register.css";
 import img from "../../assets/img/login.png";
 import { Link } from "react-router-dom";
 
 const Register = () => {
+  const nameRef = useRef("");
+  const emailRef = useRef("");
+  const passwordRef = useRef("");
+
+  const handleRegister = (event) => {
+    event.preventDefault();
+    const name = nameRef.current.value;
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+
+    console.log(name, email, password);
+  };
   return (
     <>
       <div className="container-fluid h-custom">
@@ -12,10 +24,11 @@ const Register = () => {
             <img className="img-fluid" src={img} alt="" />
           </div>
           <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-            <form>
+            <form onSubmit={handleRegister}>
               <div className="form-outline mb-4">
                 <input
                   type="text"
+                  ref={nameRef}
                   className="form-control form-control-lg"
                   placeholder="Enter Your Name"
                   required
@@ -27,6 +40,7 @@ const Register = () => {
               <div className="form-outline mb-4">
                 <input
                   type="email"
+                  ref={emailRef}
                   className="form-control form-control-lg"
                   placeholder="Enter a valid email address"
                   required
@@ -39,6 +53,7 @@ const Register = () => {
               <div className="form-outline mb-3">
                 <input
                   type="password"
+                  ref={passwordRef}
                   className="form-control form-control-lg"
                   placeholder="Enter password"
                   required
@@ -66,8 +81,8 @@ const Register = () => {
               </div>
 
               <div className="text-center text-lg-start mt-4 pt-2">
-                <button type="button" className="btn btn-primary btn-lg">
-                  Login
+                <button type="submit" className="btn btn-primary btn-lg">
+                  Register
                 </button>
                 <p className="small fw-bold mt-2 pt-1 mb-0">
                   Already have an account?

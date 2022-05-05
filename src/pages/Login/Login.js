@@ -28,6 +28,7 @@ const Login = () => {
                   ref={emailRef}
                   className="form-control form-control-lg"
                   placeholder="Enter a valid email address"
+                  required
                 />
                 <label className="form-label" htmlFor="form3Example3">
                   Email address
@@ -40,6 +41,7 @@ const Login = () => {
                   ref={passwordRef}
                   className="form-control form-control-lg"
                   placeholder="Enter password"
+                  required
                 />
                 <label className="form-label" htmlFor="form3Example4">
                   Password
