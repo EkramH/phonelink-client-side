@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Login.css";
 import img from "../../assets/img/login.png";
+import { Link } from "react-router-dom";
 
 const Login = () => {
+  const emailRef = useRef("");
+  const passwordRef = useRef("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+    console.log(email, password);
+  };
   return (
     <>
       <div className="container-fluid h-custom">
@@ -11,11 +21,11 @@ const Login = () => {
             <img className="img-fluid" src={img} alt="" />
           </div>
           <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="form-outline mb-4">
                 <input
                   type="email"
-                  id="form3Example3"
+                  ref={emailRef}
                   className="form-control form-control-lg"
                   placeholder="Enter a valid email address"
                 />
@@ -27,7 +37,7 @@ const Login = () => {
               <div className="form-outline mb-3">
                 <input
                   type="password"
-                  id="form3Example4"
+                  ref={passwordRef}
                   className="form-control form-control-lg"
                   placeholder="Enter password"
                 />
@@ -54,17 +64,19 @@ const Login = () => {
               </div>
 
               <div className="text-center text-lg-start mt-4 pt-2">
-                <button type="button" className="btn btn-primary btn-lg">
+                <button type="submit" className="btn btn-primary btn-lg">
                   Login
                 </button>
                 <p className="small fw-bold mt-2 pt-1 mb-0">
-                  Don't have an account?{" "}
-                  <span
-                    className="text-danger mx-2 cursor-pointer"
-                    style={{ cursor: "pointer" }}
-                  >
-                    Register here.
-                  </span>
+                  Don't have an account?
+                  <Link className="text-decoration-none" to={"/register"}>
+                    <span
+                      className="text-danger mx-2 cursor-pointer "
+                      style={{ cursor: "pointer" }}
+                    >
+                      Register here.
+                    </span>
+                  </Link>
                 </p>
               </div>
             </form>
