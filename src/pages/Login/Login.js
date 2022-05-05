@@ -1,18 +1,28 @@
 import React, { useRef } from "react";
 import "./Login.css";
 import img from "../../assets/img/login.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const Login = () => {
+  const navigate = useNavigate();
   const emailRef = useRef("");
   const passwordRef = useRef("");
+
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    console.log(email, password);
+    signInWithEmailAndPassword(email, password);
   };
+
+  if (user) {
+    navigate("/inventory");
+  }
   return (
     <>
       <div className="container-fluid h-custom">

@@ -1,9 +1,15 @@
 import React, { useRef } from "react";
 import "./Register.css";
 import img from "../../assets/img/login.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const Register = () => {
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
+
+  const navigate = useNavigate();
   const nameRef = useRef("");
   const emailRef = useRef("");
   const passwordRef = useRef("");
@@ -14,8 +20,12 @@ const Register = () => {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
 
-    console.log(name, email, password);
+    createUserWithEmailAndPassword(email, password);
   };
+
+  if (user) {
+    navigate("/inventory");
+  }
   return (
     <>
       <div className="container-fluid h-custom">
