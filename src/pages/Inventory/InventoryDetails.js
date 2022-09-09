@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./inventory.css";
 
-const inventoryDetails = ({ inventory }) => {
+const InventoryDetails = ({ inventory }) => {
   const { _id, name, img, price, details, quantity, supplier } = inventory;
   const navigate = useNavigate();
 
@@ -41,4 +41,4 @@ const inventoryDetails = ({ inventory }) => {
   );
 };
 
-export default inventoryDetails;
+export default InventoryDetails;
